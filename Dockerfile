@@ -18,11 +18,6 @@ RUN \
     pip uninstall -y django && \
     pip install -Iv django==1.8.4
 
-# PostgreSQL
-RUN \
-    [[ ! -e "/var/lib/pgsql/data/pg_hba.conf" ]] && service postgresql initdb && \
-    sed -i 's/ident/trust/g' /var/lib/pgsql/data/pg_hba.conf
-
 # Entrypoint
 ENV OPENSSL_PASS password
 COPY files/deploy.sh.dat /
