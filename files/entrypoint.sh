@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 if [ "$1" = "start" ]; then
     openssl enc -aes-256-cbc -d -in deploy.sh.dat > deploy.sh -pass pass:$OPENSSL_PASS
