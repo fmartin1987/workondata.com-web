@@ -2,8 +2,7 @@ FROM fmartin1987/centos67-python27-apache24:latest
 
 # PIP Packages
 RUN \
-    yum install -y git openldap-devel python-devel postgresql-devel --nogpgcheck && \
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib && \
+    yum install -y git openldap-devel python-devel postgresql-devel && \
     pip install virtualenv && \
     mkdir -p /var/www/virtualenvs && \
     virtualenv -p /usr/local/bin/python2.7 /var/www/virtualenvs/WorkOnData && \
